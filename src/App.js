@@ -1,31 +1,45 @@
 import React from "react";
 import PropTypes from "prop-types";
+import axios from "axios";
+import Movie from "./Movie";
 
-const list = [
-  { id: 1, name: "A", country: "korea" },
-  { id: 2, name: "B", country: "america" },
-  { id: 3, name: "C", country: "japan" },
-];
-
-function SayHi({ name, country }) {
-  return (
-    <div>
-      <span>Hello, {name}</span> <h3>Your country is {country}</h3>
-    </div>
-  );
-}
-
-function getPerson(person) {
-  return <SayHi key={person.id} name={person.name} country={person.country} />;
-}
-
-function App() {
-  return (
-    <div>
-      <h1>Test</h1>
-      {list.map(getPerson)}
-    </div>
-  );
+class App extends React.Component {
+  state = {
+    isLoading: true,
+    movies: [],
+  };
+  getMovies = async () => {
+    const {
+      data: {
+        data: { movies },
+      },
+    } = await axios.get(
+      "https://yts-proxy.now.sh/list_movies.json?sort_by=rating"
+    );
+    this.setState({ isLoading: false, movies });
+  };
+  componentDidMount() {
+    this.getMovies();
+  }
+  render() {
+    const { isLoading, movies } = this.state;
+    return (
+      <div>
+        {isLoading
+          ? "Loading"
+          : movies.map((movie) => (
+              <Movie
+                key={movie.id}
+                id={movie.id}
+                title={movie.title}
+                summary={movie.summary}
+                poster={movie.medium_cover_image}
+                year={movie.year}
+              />
+            ))}
+      </div>
+    );
+  }
 }
 
 export default App;
