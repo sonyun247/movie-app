@@ -1,10 +1,9 @@
 .movies .movie {
-  background-color: orange;
-  width: 45%;
-  height: 40%;
+  width: 520px;
+  height: 200px;
   margin-bottom: 50px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: flex-start;
   color: white;
   font-weight: 300;
@@ -15,9 +14,17 @@
   background-image: linear-gradient(#243b55, #141e30);
   cursor: pointer;
 }
+.movie a {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  text-decoration: none;
+  color: inherit;
+}
 .movie img {
   position: relative;
-  top: -40px;
+  top: -35px;
+  left: -5px;
   max-width: 130px;
   width: 100%;
   margin-right: 20px;

@@ -1,0 +1,53 @@
+.detail-wrapper {
+  border-radius: 10px;
+  width: 80%;
+  display: flex;
+  margin: 50px 100px;
+  background-image: linear-gradient(#243b55, #141e30);
+}
+.detail-wrapper img {
+  border-radius: 5px;
+  height: 80%;
+  width: 80%;
+}
+.detail {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.detail__title-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 15px;
+}
+.detail .detail__title {
+  font-size: 55px;
+  color: orange;
+  font-weight: 400;
+  text-transform: uppercase;
+  padding-right: 10px;
+}
+.detail .detail__year {
+  font-size: 25px;
+  color: white;
+  font-style: italic;
+}
+.detail .detail__genres {
+  display: flex;
+  font-size: 18px;
+  color: skyblue;
+  margin-bottom: 20px;
+}
+.detail__genres li {
+  margin-right: 10px;
+}
+.detail .detail__summary {
+  border-top: 1px solid gray;
+  color: white;
+  padding: 30px;
+  font-size: 20px;
+  line-height: 25px;
+  font-weight: 300;
+}

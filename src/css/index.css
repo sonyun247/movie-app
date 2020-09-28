@@ -1,6 +1,8 @@
 @import "./reset.css";
-@import "./App.css";
+@import "./Home.css";
 @import "./Movie.css";
+@import "./Navigation.css";
+@import "./Detail.css";
 
 * {
   box-sizing: border-box;

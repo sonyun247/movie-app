@@ -48,10 +48,10 @@ body,
 
 .movies {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+  justify-content: space-around;
+  align-items: center;
   flex-wrap: wrap;
-  width: 95%;
-  padding: 50px;
+  width: 90%;
+  padding: 40px;
   padding-top: 80px;
 }
